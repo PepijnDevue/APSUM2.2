@@ -4,9 +4,8 @@
 #include "icontainer.hpp"
 
 class Shelf: public IContainer{
-    private:
-        std::vector<Pallet> pallets; //capacity: 4
     public:
+        std::vector<Pallet> pallets; //capacity: 4
         Shelf();
         bool swapPallet(int slot, int slot2);
         bool isEmpty() override;
