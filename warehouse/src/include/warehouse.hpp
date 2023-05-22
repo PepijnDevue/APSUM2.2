@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -7,8 +9,8 @@
 class Warehouse{
     private:
         std::vector<Employee> employees;
-        std::vector<Shelf> shelves;
     public:
+        std::vector<Shelf> shelves;
         Warehouse();
         void addEmployee(Employee employee);
         void addShelf(Shelf shelf);

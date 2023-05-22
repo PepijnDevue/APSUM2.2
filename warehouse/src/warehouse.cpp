@@ -20,7 +20,7 @@ void Warehouse::addShelf(Shelf shelf){
 
 bool Warehouse::rearrangeShelf(Shelf &shelf){
     for (unsigned int employeeIndex = 0; employeeIndex < employees.size(); employeeIndex++){
-        if (!employees[employeeIndex].getBusy()){
+        if (!employees[employeeIndex].getBusy() && employees[employeeIndex].getForkliftCertificate()){
             employees[employeeIndex].setBusy(true);
             bool sorted = false;
             while(!sorted){}
@@ -32,18 +32,32 @@ bool Warehouse::rearrangeShelf(Shelf &shelf){
                     sorted = true;
                 }
             employees[employeeIndex].setBusy(false);
-            break;
+            return true;
         }
     }
+    return false;
 }
 
 bool Warehouse::pickItems(std::string itemName, int itemCount){
     for (unsigned int employeeIndex = 0; employeeIndex < employees.size(); employeeIndex++){
         if (!employees[employeeIndex].getBusy()){
             employees[employeeIndex].setBusy(true);
-            for ()
+            for (unsigned int shelfIndex = 0; shelfIndex < shelves.size(); shelfIndex++){
+                for (unsigned int palletIndex = 0; palletIndex < 4; palletIndex++){
+                    Pallet currentPallet = shelves[shelfIndex].pallets[palletIndex];
+                    if (currentPallet.getItemName() == itemName){
+                        while(currentPallet.takeOne() && itemCount > 0){
+                            itemCount--;
+                        }
+                    }
+                    if (itemCount == 0){
+                        return true;
+                    }
+                }
+            }
             employees[employeeIndex].setBusy(false);
             break;
         }
     }
+    return false;
 }

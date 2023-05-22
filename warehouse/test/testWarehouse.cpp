@@ -73,6 +73,7 @@ Warehouse createMockWarehouse(){
 
 TEST_CASE("Rearrange empty shelf", "Warehouse::rearrangeShelf"){
     // Construct empty warehouse and add empty shelf and forklift certified Employee.
+    std::cout << "heeee" << std::endl;
     Warehouse warehouse = Warehouse();
     warehouse.addShelf(Shelf());
     warehouse.addEmployee(Employee("Bob", true));
