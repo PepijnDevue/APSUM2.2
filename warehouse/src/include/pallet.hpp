@@ -6,9 +6,9 @@
 
 class Pallet: public IContainer{
     private:
-        int itemCount; //only mutable through taking and putting
         std::string itemName; //only mutable when empty
         int itemCapacity; // only mutable when empty
+        int itemCount; //only mutable through taking and putting
     public:
         Pallet(std::string itemName, int itemCapacity, int itemCount);
         Pallet();

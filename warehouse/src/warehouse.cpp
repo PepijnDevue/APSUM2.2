@@ -7,7 +7,7 @@
 #include "include/pallet.hpp"
 
 Warehouse::Warehouse(){
-    shelves[0] = Shelf();
+    // shelves.push_back(Shelf());
 }
 
 void Warehouse::addEmployee(Employee employee){
@@ -22,17 +22,20 @@ bool Warehouse::rearrangeShelf(Shelf &shelf){
     for (unsigned int employeeIndex = 0; employeeIndex < employees.size(); employeeIndex++){
         if (!employees[employeeIndex].getBusy() && employees[employeeIndex].getForkliftCertificate()){
             employees[employeeIndex].setBusy(true);
-            bool sorted = false;
-            while(!sorted){}
+            while(true){
+                bool sorted_check = true;
                 for (unsigned int palletIndex = 0; palletIndex < 3; palletIndex++){
                     if (shelf.pallets[palletIndex].getItemCount() > shelf.pallets[palletIndex + 1].getItemCount()){
                         shelf.swapPallet(palletIndex, palletIndex+1);
+                        sorted_check = false;
                         break;
                     }
-                    sorted = true;
                 }
-            employees[employeeIndex].setBusy(false);
-            return true;
+                if (sorted_check){
+                    employees[employeeIndex].setBusy(false);
+                    return true;
+                }
+            }
         }
     }
     return false;

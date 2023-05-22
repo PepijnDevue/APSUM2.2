@@ -5,11 +5,11 @@
 
 Shelf::Shelf(){
     for(int i = 0; i<4; i++){
-        pallets[i] = Pallet();
+        pallets.push_back(Pallet());
     }
 }
 bool Shelf::swapPallet(int slot, int slot2){
-    if(-1<slot && slot<4 && -1<slot2 && slot2<-4 && slot != slot2){
+    if(-1<slot && slot<4 && -1<slot2 && slot2<4 && slot != slot2){
         Pallet temp = pallets[slot];
         pallets[slot] = pallets[slot2];
         pallets[slot2] = temp;

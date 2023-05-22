@@ -72,8 +72,8 @@ Warehouse createMockWarehouse(){
 ///////////////////////////////////////////////////////////////
 
 TEST_CASE("Rearrange empty shelf", "Warehouse::rearrangeShelf"){
+    std::cout << "test 1" << std::endl;
     // Construct empty warehouse and add empty shelf and forklift certified Employee.
-    std::cout << "heeee" << std::endl;
     Warehouse warehouse = Warehouse();
     warehouse.addShelf(Shelf());
     warehouse.addEmployee(Employee("Bob", true));
@@ -99,6 +99,7 @@ TEST_CASE("Rearrange empty shelf", "Warehouse::rearrangeShelf"){
 }
 
 TEST_CASE("Rearrange full shelf", "Warehouse::rearrangeShelf"){
+    std::cout << "test 2" << std::endl;
     // Construct warehouse with unsorted shelf of books.
     Warehouse warehouse = Warehouse();
     Shelf shelf1 = Shelf();
@@ -133,6 +134,7 @@ TEST_CASE("Rearrange full shelf", "Warehouse::rearrangeShelf"){
 }
 
 TEST_CASE("Rearrange half filled shelf", "Warehouse::rearrangeShelf"){
+    std::cout << "test 3" << std::endl;
     // Construct empty warehouse and unsorted shelf of books.
     Warehouse warehouse = Warehouse();
     Shelf shelf1 = Shelf();
@@ -167,6 +169,7 @@ TEST_CASE("Rearrange half filled shelf", "Warehouse::rearrangeShelf"){
 }
 
 TEST_CASE("Rearrange shelf without qualified employee", "Warehouse::rearrangeShelf"){
+    std::cout << "test 4" << std::endl;
     // Construct warehouse with unsorted shelf of books.
     Warehouse warehouse = Warehouse();
     Shelf shelf1 = Shelf();
@@ -201,6 +204,7 @@ TEST_CASE("Rearrange shelf without qualified employee", "Warehouse::rearrangeShe
 }
 
 TEST_CASE("Rearrange shelf with quallified, but busy, employee", "Warehouse::rearrangeShelf"){
+    std::cout << "test 5" << std::endl;
     // Construct warehouse with unsorted shelf of books.
     Warehouse warehouse = Warehouse();
     Shelf shelf1 = Shelf();

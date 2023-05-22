@@ -6,7 +6,7 @@
 class Employee{
     private:
         const std::string name;
-        bool busy;
+        bool busy = false;
         bool forkliftCertificate;
     public:
         Employee(std::string name, bool forkliftCertificate);
