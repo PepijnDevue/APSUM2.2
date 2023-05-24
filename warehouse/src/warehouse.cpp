@@ -86,3 +86,14 @@ bool Warehouse::pickItems(std::string itemName, int itemCount){
     }
     return false;
 }
+
+std::ostream& operator<<(std::ostream& out, const Warehouse &warehouse){
+    out << "Employees:\n";
+    for (unsigned int i = 0; i < warehouse.employees.size(); i++){
+        out << warehouse.employees[i] << std::endl;
+    }
+    for (unsigned int i = 0; i < warehouse.shelves.size(); i++){
+        out << "Shelf " << i << ":\n" << warehouse.shelves[i] << std::endl;
+    }
+    return out;
+}

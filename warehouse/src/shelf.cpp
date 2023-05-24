@@ -40,3 +40,8 @@ bool Shelf::isFull(){
     }
     return true;
 }
+
+std::ostream& operator<<(std::ostream& out, const Shelf &shelf){
+    out << "pallet1: " << shelf.pallets[0] << "\npallet2: " << shelf.pallets[1] << "\npallet3: " << shelf.pallets[2] << "\npallet4: " << shelf.pallets[3];
+    return out;
+}

@@ -10,15 +10,19 @@ Pallet::Pallet(){
     itemCapacity = -1;
 }
 
-std::string Pallet::getItemName(){
+std::string Pallet::getItemName() const{
     return itemName;
 }
 
-int Pallet::getItemCount(){
+int Pallet::getItemCount() const{
     return itemCount;
 }
 
-int Pallet::getRemainingSpace(){
+int Pallet::getItemCapacity() const{
+    return itemCapacity;
+}
+
+int Pallet::getRemainingSpace() const{
     return itemCapacity-itemCount;
 }
 
@@ -79,4 +83,9 @@ bool Pallet::isEmpty(){
 
 bool Pallet::isFull(){
     return(itemCount == itemCapacity);
+}
+
+std::ostream& operator<<(std::ostream& out, const Pallet &pallet){
+    out << "(itemName: " << pallet.getItemName() << ", itemCount: " << pallet.getItemCount() << ", itemCapacity: " << pallet.getItemCapacity() << ")";
+    return out;
 }

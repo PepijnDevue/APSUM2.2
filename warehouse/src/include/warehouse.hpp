@@ -63,4 +63,13 @@ class Warehouse{
          * @return false when unable to rearrange
          */
         bool pickItems(std::string itemName, int itemCount);
+
+        /**
+         * @brief Print the info of a warehouse
+         * 
+         * @param out 
+         * @param warehouse 
+         * @return std::ostream& 
+         */
+        friend std::ostream& operator<<(std::ostream& out, const Warehouse &warehouse);
 };

@@ -31,21 +31,28 @@ class Pallet: public IContainer{
          * 
          * @return std::string the name
          */
-        std::string getItemName();
+        std::string getItemName() const;
 
         /**
          * @brief Get the amount of items on a pallet
          * 
          * @return int the amount
          */
-        int getItemCount();
+        int getItemCount() const;
+
+        /**
+         * @brief Get the capacity of the pallet
+         * 
+         * @return int 
+         */
+        int getItemCapacity() const;
 
         /**
          * @brief Get the amount of items that can still be added to the pallet
          * 
          * @return int (itemCapacity - itemCount)
          */
-        int getRemainingSpace();
+        int getRemainingSpace() const;
 
         /**
          * @brief Allocate an empty pallet to a new item type
@@ -119,4 +126,13 @@ class Pallet: public IContainer{
          * @return false 
          */
         bool isFull() override;
+
+        /**
+         * @brief Print the info of a pallet
+         * 
+         * @param out 
+         * @param pallet 
+         * @return std::ostream& 
+         */
+        friend std::ostream& operator<<(std::ostream& out, const Pallet &pallet);
 };

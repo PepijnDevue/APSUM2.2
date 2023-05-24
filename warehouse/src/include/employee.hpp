@@ -22,7 +22,7 @@ class Employee{
          * 
          * @return std::string 
          */
-        std::string getName();
+        std::string getName() const;
 
         /**
          * @brief Check if an employee is busy
@@ -30,7 +30,7 @@ class Employee{
          * @return true when busy
          * @return false when not busy
          */
-        bool getBusy();
+        bool getBusy() const;
 
         /**
          * @brief Change if an employee is busy
@@ -45,7 +45,7 @@ class Employee{
          * @return true
          * @return false 
          */
-        bool getForkliftCertificate();
+        bool getForkliftCertificate() const;
 
         /**
          * @brief Set if an employee is forkliftcertified
@@ -53,4 +53,13 @@ class Employee{
          * @param forkliftCertificate true when forkliftcertified, false when not so
          */
         void setForkliftCertificate(bool forkliftCertificate);
+
+        /**
+         * @brief Print the info of an employee
+         * 
+         * @param out 
+         * @param employee 
+         * @return std::ostream& 
+         */
+        friend std::ostream& operator<<(std::ostream& out, const Employee &employee);
 };

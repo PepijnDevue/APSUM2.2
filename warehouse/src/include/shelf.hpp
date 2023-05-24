@@ -47,4 +47,13 @@ class Shelf: public IContainer{
          * @return false when not all pallets are full
          */
         bool isFull() override;
+
+        /**
+         * @brief Print the info of a shelf
+         * 
+         * @param out 
+         * @param shelf 
+         * @return std::ostream& 
+         */
+        friend std::ostream& operator<<(std::ostream& out, const Shelf &shelf);
 };

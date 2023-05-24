@@ -41,7 +41,13 @@ int main(void){
 
     warehouse.addEmployee(Employee("Sjon", true));
 
-    std::cout << warehouse.rearrangeShelf(warehouse.shelves[2]) << std::endl;
+    std::cout << "Before rearrange:" << std::endl << warehouse << std::endl;
 
-    std::cout << warehouse.pickItems("Boxes", 35) << std::endl;
+    warehouse.rearrangeShelf(warehouse.shelves[2]);
+
+    std::cout << "Before pickItems:" << std::endl << warehouse << std::endl;
+
+    warehouse.pickItems("Boxes", 35);
+
+    std::cout << "After: " << std::endl << warehouse;
 }
