@@ -93,7 +93,7 @@ std::ostream& operator<<(std::ostream& out, const Warehouse &warehouse){
         out << warehouse.employees[i] << std::endl;
     }
     for (unsigned int i = 0; i < warehouse.shelves.size(); i++){
-        out << "Shelf " << i << ":\n" << warehouse.shelves[i] << std::endl;
+        out << "Shelf " << i+1 << ":\n" << warehouse.shelves[i] << std::endl;
     }
     return out;
 }
